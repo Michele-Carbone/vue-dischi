@@ -6,12 +6,28 @@ const app = new Vue({
   el: '#app',
   data: {
     albums: [],
+    selectedGenre: 'All',
   },
   computed: {
-    orderAlbums() {
+    orderedAlbums() {
       return this.albums.sort((a, b) => {
         return a.year - b.year;
       });
+    },
+
+    genreList() {
+      const list = [];
+      this.albums.forEach(album => {
+        if (!list.includes(album.genre)) list.push(album.genre);
+      });
+
+      return list;
+    },
+
+    filteredArray() {
+      const albums = this.orderedAlbums;
+      if (this.selectedGenre === 'All') return albums;
+      return albums.filter((album) => album.genre === this.selectedGenre);
     }
   },
   methods: {},
