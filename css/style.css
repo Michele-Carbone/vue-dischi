@@ -64,6 +64,7 @@ header img {
 #album-container .card .title {
   color: #fff;
   margin: 15px 0;
+  text-transform: uppercase;
 }
 #album-container .card .author,
 #album-container .card .year {

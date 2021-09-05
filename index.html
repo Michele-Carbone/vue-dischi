@@ -20,22 +20,15 @@
     </header>
     <main class="container">
       <section id="album-container">
-        <div class="card" v-for="album in albums">
-          <img src="images/demo.jpg" alt="New Jersey" />
-          <h2 class="title">NEW JERSEY</h2>
-          <address class="author">Bon Jovi</address>
-          <time datetime="1988" class="year">1988</time>
+        <div class="card" v-for="album in orderAlbums">
+          <img :src="album.poster" :alt="album.title" />
+          <h2 class="title">{{ album.title }}</h2>
+          <address class="author">{{ album.author }}</address>
+          <time :datetime="album.year" class="year">{{ album.year }}</time>
         </div>
       </section>
     </main>
   </div>
-
-
-  <select name="" id="">
-    <option>All</option>
-    <option>Pop</option>
-    <option>Pop</option>
-  </select>
 
 
   <script src="js/script.js"></script>
